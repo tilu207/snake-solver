@@ -1,0 +1,40 @@
+{
+    "grid_size": [30, 30],
+    "num_of_games": 100,
+    "max_moves": 1000,
+    "seed": 123,
+    "solvers": [
+        {
+            "module_name": "simple_greedy_solver",
+            "class_name": "SimpleGreedySolver",
+            "name": "simple-greedy",
+            "parameters": {}
+        },
+        {
+            "module_name": "tail_chasing_solver",
+            "class_name": "TailChasingSolver",
+            "name": "tail-chasing",
+            "parameters": {}
+        },
+        {
+            "module_name": "fixed_ham_cycle_solver",
+            "class_name": "FixedHamCycleSolver",
+            "name": "fix-ham-cycle",
+            "parameters": {}
+        },
+        {
+            "module_name": "ham_cycle_repair_solver",
+            "class_name": "HamCycleRepairSolver",
+            "name": "repair-ham-cycle",
+            "parameters": {}
+        },
+        {
+            "module_name": "cell_tree_solver",
+            "class_name": "CellTreeSolver",
+            "name": "cell-tree",
+            "parameters": {}
+        }
+    ],
+    "save_path": "eval/early-game-demo/results.txt",
+    "plot_path": "eval/early-game-demo/moves_per_score.png"
+}

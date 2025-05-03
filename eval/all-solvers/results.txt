@@ -1,0 +1,6 @@
+Solver            Avg Moves  Min Moves  Max Moves  Std Moves  Avg Score  Completion (%)  Avg Time per Game (sec)
+simple-greedy     2396.35    867        4473       700.82     108.06     0.0             0.07
+tail-chasing      92661.59   38260      145039     24357.2    720.08     0.0             766.69
+fix-ham-cycle     202081.19  188927     213280     4209.2     900.0      1.0             0.43
+repair-ham-cycle  83080.72   73591      94908      4113.39    900.0      1.0             15.53
+cell-tree         43998.64   39444      49637      1771.46    900.0      1.0             52.16

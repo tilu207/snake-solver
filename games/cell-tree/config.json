@@ -1,0 +1,11 @@
+{
+    "grid_size": [16, 16],
+    "save_path": "games/cell-tree/game.json",
+    "seed": 123,
+    "solver":{
+        "module_name": "cell_tree_solver",
+        "class_name": "CellTreeSolver",
+        "name": "cell-tree",
+        "parameters": {}
+    }
+}

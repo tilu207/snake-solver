@@ -1,0 +1,27 @@
+{
+    "grid_size": [30, 30],
+    "num_of_games": 100,
+    "seed": 123,
+    "solvers": [
+        {
+            "module_name": "cell_tree_solver",
+            "class_name": "CellTreeSolver",
+            "name": "cell-tree-wh",
+            "parameters": {
+                "wall_bonus": 0.001,
+                "snake_wall_bonus": 0.0
+            }
+        },
+        {
+            "module_name": "cell_tree_solver",
+            "class_name": "CellTreeSolver",
+            "name": "cell-tree-greedy",
+            "parameters": {
+                "allowed_unreach_factor": 0.04,
+                "len_snake_unreach_factor": 0.3
+            }
+        }
+    ],
+    "save_path": "eval/advanced-ct/results.txt",
+    "plot_path": "eval/advanced-ct/moves_per_score.png"
+}
