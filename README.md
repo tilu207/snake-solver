@@ -1,7 +1,7 @@
 # snake-solver
 Implementations of different strategies for solving the game Snake.
 
-Snake is a game where a snake moves from node to node on a graph, trying to eat apples that appear randomly at different nodes. If it eats the apple, the snake will grow in length. Once the snake occupies the entire graph, it has won. When the snake moves to a node that it already occupies, it dies. While winning the game is often easily achieved, the interesting part is to win the game in as little moves as possible. This project implements solvers designed to play - and potentially win - the game using as few moves as possible. The game is typically played on grid graphs, with this project focusing specifically on grids of size $n \times n$.
+Snake is a game where a snake moves from node to node on a graph, trying to eat apples that appear randomly at different nodes. If it eats the apple, the snake will grow in length. Once the snake occupies the entire graph, it has won. When the snake moves to a node that it already occupies, it dies. While winning the game is often easily achieved, the interesting part is to win the game in as little moves as possible. This project implements solvers designed to play - and potentially win - the game using as few moves as possible. The game is typically played on grid graphs, with this project focusing specifically on grids of size $n \times n$ with even $n$.
 
 View [Solvers](#solvers), [Usage](#usage) and [Results](#results).
 
@@ -72,7 +72,7 @@ python src/snake.py -mode eval -config_path [path_to_config]
 You can add the -h flag to see further options.
 
 ## Results
-The results were produced on a $30 \times 30$ grid and averaged over 100 games. Names of the solvers correspond to the solver classes. The cell-tree solver has default paramters, the cell-tree-wh solver sets weights to favour walls and the cell-tree-greedy solver allows areas to be left unreachable. The exact configs for the solvers can be found [here](/eval/all-solvers/config.json) and [here](/eval/advanced-ct/config.json).
+The results were produced on a $30 \times 30$ grid and averaged over 100 games. Names of the solvers correspond to the solver classes. The cell-tree solver uses default parameters (as defined in the cell-tree solver class), the cell-tree-wh solver sets weights to favour movement along walls and the cell-tree-greedy solver allows areas to be left unreachable. Note that I only shortly experimented with the parameters and picked the best ones found during that period for evaluation. Further tuning may reduce the number of moves. The exact configs for the solvers can be found [here](/eval/all-solvers/config.json) and [here](/eval/advanced-ct/config.json).
 
 | Solver            | Avg Moves | Min Moves | Max Moves | Std Moves | Avg Score | Completion (%) | Avg Time per Game (sec) |
 |-------------------|-----------|-----------|-----------|-----------|-----------|------------------|---------------------------|
@@ -84,7 +84,7 @@ The results were produced on a $30 \times 30$ grid and averaged over 100 games. 
 | cell-tree-wh      | 44239.25  | 40100     | 49737     | 1852.88   | 900.0     | 100.0              | 57.51                     |
 | cell-tree-greedy  | 43665.18  | 39345     | 49870     | 1938.86   | 900.0     | 100.0              | 53.97                     |
 
-We can see that the cell-tree solver performs best, with the greedy variation even lowering the average by another 300 moves (but also having a larger std). The wall hugging variation performed slightly worse, most likely due to not setting the weights optimally. I shortly experimented with the parameters, but they are far from optimized. Optimizing them could further decrease the moves.
+We can see that the cell-tree solver performs best, with the greedy variation even lowering the average by another 300 moves (but also having a larger std). The wall hugging variation performed slightly worse, most likely due to not setting the weights optimally.
 
 The following graph shows the average moves it took a solver to reach a certain score, again over 100 games on a $30 \times 30$ grid.
 
